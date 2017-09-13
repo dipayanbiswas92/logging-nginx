@@ -1,12 +1,12 @@
 server {
    listen 80;
    location / {
-                proxy_pass  ${DOLLAR}NGINX_SCHEMA://${DOLLAR}NGINX_HOST:${DOLLAR}NGINX_PORT ;
+                proxy_pass  ${NGINX_SCHEMA}://${NGINX_HOST}:${NGINX_PORT} ;
                 proxy_ssl_verify off;
                 proxy_redirect off;
                 proxy_pass_request_headers          on;
                 proxy_set_header X-Proxy-Remote-User openshift-admin;
-                proxy_set_header Authorization "Bearer ${DOLLAR}TOKEN";
+                proxy_set_header Authorization "Bearer ${TOKEN}";
                 proxy_set_header X-Forwarded-For 127.0.0.1;
 
    }
