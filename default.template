@@ -1,8 +1,7 @@
-
 server {
    listen 80;
    location / {
-                proxy_pass  ${DOLLAR}NGINX_HOST ;
+                proxy_pass  ${DOLLAR}NGINX_SCHEMA://${DOLLAR}NGINX_HOST:${DOLLAR}NGINX_PORT ;
                 proxy_ssl_verify off;
                 proxy_redirect off;
                 proxy_pass_request_headers          on;
